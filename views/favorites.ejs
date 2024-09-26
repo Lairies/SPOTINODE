@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Favorites</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <header>
+        <h1>Your Favorites</h1>
+        <nav>
+            <ul>
+                <li><a href="/song">Browse Music</a></li>
+                <li><a href="/song/scan">Scan for New Songs</a></li>
+                <li><a href="/">Home</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <h2>Your Favorite Songs</h2>
+            <ul class="song-list">
+                <% if (songs.length > 0) { %>
+                    <% songs.forEach(song => { %>
+                        <li>
+                            <div class="song-info">
+                                <span class="song-title"><%= song.title %></span>
+                                <span class="song-artist"> by <%= song.artist %></span>
+                            </div>
+                            <audio controls>
+                                <source src="<%= song.file_path %>" type="audio/mp3">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </li>
+                    <% }) %>
+                <% } else { %>
+                    <li>You have no favorite songs yet!</li>
+                <% } %>
+            </ul>
+        </section>
+    </main>
+</body>
+</html>

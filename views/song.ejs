@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Library</title>
+    <link rel="stylesheet" href="/style.css"> <!-- Ensure the correct path to CSS -->
+</head>
+<body>
+    <header>
+        <h1>Music Library</h1>
+        <nav>
+            <ul>
+                <li><a href="/song">Browse Music</a></li>
+                <li><a href="/song/scan">Scan for New Songs</a></li>
+                <li><a href="/song/favorites">Your Favorites</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <form action="/song/search" method="GET">
+            <input type="text" name="search" placeholder="Search by title or artist">
+            <button type="submit">Search</button>
+        </form>
+        <ul class="song-list">
+            <% if (songs.length > 0) { %>
+                <% songs.forEach(song => { %>
+                    <li>
+                        <div class="song-info">
+                            <span class="song-title"><%= song.title %></span>
+                            <span class="song-artist">by <%= song.artist %></span>
+                        </div>
+                        <audio controls>
+                            <source src="<%= song.file_path %>" type="audio/mp3">
+                            Your browser does not support the audio element.
+                        </audio>
+                        <form action="/song/favorites/add" method="POST">
+                            <input type="hidden" name="user_id" value="1"> <!-- Example user -->
+                            <input type="hidden" name="song_id" value="<%= song.id %>">
+                            <button type="submit">Add to Favorites</button>
+                        </form>
+                    </li>
+                <% }) %>
+            <% } else { %>
+                <li>No songs available. Please scan for new songs!</li>
+            <% } %>
+        </ul>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Music Library</p>
+    </footer>
+</body>
+</html>

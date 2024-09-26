@@ -1,0 +1,177 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif; /* Modern font */
+    background-color: #e5e5f7; /* Light purple background */
+    color: #2d2d4f; /* Darker purple text */
+    line-height: 1.6; /* Improves readability */
+}
+
+/* Header styles */
+header {
+    background: linear-gradient(135deg, #b19cd9, #9575cd); /* Lighter gradient for header */
+    color: #2d2d4f;
+    padding: 20px 0;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+}
+
+/* Navigation styles */
+nav {
+    display: flex;
+    justify-content: center;
+    background-color: #b19cd9; /* Lighter purple background for nav */
+    padding: 15px 0;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+nav ul li a {
+    color: #2d2d4f;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1rem;
+    padding: 10px 20px;
+    border-radius: 30px;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+nav ul li a:hover {
+    background-color: #c5a3f1; /* Slightly lighter purple for hover effect */
+    transform: scale(1.05);
+}
+
+/* Main content styles */
+main {
+    padding: 20px;
+    text-align: center;
+}
+
+section {
+    margin-top: 20px;
+    padding: 20px;
+    background: #d1c4e9; /* Light purple for sections */
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* List styles */
+ul.song-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 20px 0;
+}
+
+.song-list li {
+    background: #c5a3f1; /* Light purple for song list items */
+    border-radius: 10px;
+    margin: 10px 0;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.song-list li:hover {
+    background: #d6b9f9; /* Even lighter purple for hover effect */
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Song information styles */
+.song-info {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    flex: 1;
+    margin-right: 10px;
+}
+
+.song-title {
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.song-artist {
+    font-size: 0.9rem;
+    color: #7e57c2; /* Medium purple for artist name */
+}
+
+/* Audio player styling */
+audio {
+    width: 300px;
+    margin-left: 20px;
+    filter: brightness(1.1); /* Slight brightness to stand out */
+}
+
+/* Button styles */
+button {
+    background: #b19cd9; /* Light purple background for buttons */
+    color: #2d2d4f;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+button:hover {
+    background: #c5a3f1; /* Slightly lighter purple for hover effect */
+    transform: translateY(-2px);
+}
+
+/* Footer styles */
+footer {
+    text-align: center;
+    padding: 15px 0;
+    background: #b19cd9; /* Light purple background for footer */
+    color: #2d2d4f;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    margin-top: 40px;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    audio {
+        width: 100%; /* Make audio player take full width on small screens */
+    }
+
+    button {
+        width: 100%; /* Full-width buttons on small screens */
+        padding: 12px;
+    }
+}
